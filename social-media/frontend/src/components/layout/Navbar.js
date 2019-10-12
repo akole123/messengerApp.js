@@ -9,38 +9,30 @@ const Navbar = () => {
 
     const logOut = e => {
         logout();
-        window.location.reload(); 
+        window.location.reload();
     }
     const userLink = (
         <Fragment>
-            {isAuthenticated === true ? `Logged in as ${user.name}` : <h1>Null</h1>}
-            <li>
-                <Link to='/users'>Find friends</Link>
-            </li>
-            <li>
+            <div className="loggedInNav">
+                {isAuthenticated === true ? `Welcome ${user.name}` : <h1>Null</h1>}
+                <Link to='/users'>Find Friends</Link>
                 <Link to='/profile'>Profile</Link>
-            </li>
-            <li>
                 <Link to='/' onClick={logOut}>Logout</Link>
-            </li>
+            </div>
         </Fragment>
     )
     const guestLinks = (
         <Fragment>
             <Login />
-        </Fragment>
+        </Fragment >
     );
 
     return (
-        <div className="navbar bg-primary">
-            <ul>
-                <h1>
-                    <Link to="/" className='fas fa-id-card-alt'> Messanger App</Link>
-                </h1>
-            </ul>
-            <ul>
-                {isAuthenticated ? userLink : guestLinks}
-            </ul>
+        <div className="navigation">
+            <h1>
+                <Link to="/" className='fas fa-id-card-alt'></Link>
+            </h1>
+            {isAuthenticated ? userLink : guestLinks}
         </div>
     );
 }

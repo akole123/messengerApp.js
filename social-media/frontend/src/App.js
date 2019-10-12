@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import Navbar from './components/layout/Navbar';
-import Footer from './components/layout/Footer';
 import Home from './components/pages/Home';
 import Users from './components/pages/Users';
 import Profile from './components/pages/Profile';
@@ -18,14 +17,11 @@ const App = () => {
                     <Router>
                         <Fragment>
                             <Navbar />
-                            <div className="container">
-                                <Switch>
-                                    <Route exact path='/' component={Home} />
-                                    <Route exact path='/profile' component={Profile} />
-                                    <Route exact path='/users' component={Users} />
-                                </Switch>
-                            </div>
-                            <Footer />
+                            <Switch>
+                                <Route exact path='/' component={Home} />
+                                <Route exact path='/profile' component={Profile} />
+                                <Route exact path='/users' component={Users} />
+                            </Switch>
                         </Fragment>
                     </Router>
                 </UserListState >

@@ -33,21 +33,19 @@ const Login = (props) => {
     return (
         <div>
             <form className="form-inline" onSubmit={onSubmit}>
-                <ul className="form-centering">
-                    <li className="loginSpacing">
-                        <label htmlFor="email">Email</label>
-                        <input type="email" name="email" value={email} onChange={onChange} required />
-                    </li>
-                    <li className="loginSpacing">
-                        <label htmlFor="password">Password</label>
-                        <input type="password" name="password" value={password} onChange={onChange} required />
-                    </li >
+                <li className="loginSpacing">
+                    <label htmlFor="email">Email</label>
+                    <input type="email" name="email" value={email} onChange={onChange} required />
+                </li>
+                <li className="loginSpacing">
+                    <label htmlFor="password">Password</label>
+                    <input type="password" name="password" value={password} onChange={onChange} required />
+                </li >
 
-                    <li className="loginSpacing">
-                        <label></label>
-                        <button type="submit">Login</button>
-                    </li>
-                </ul>
+                <li className="loginSpacing">
+                    <label></label>
+                    <button type="submit">Login</button>
+                </li>
             </form>
         </div>
     )

@@ -1,6 +1,10 @@
 import React, { Fragment, useContext, useRef, useEffect } from 'react';
 import AuthContext from '../authlist/authContext';
-import WhaleLarger from '../layout/WhaleLarger';
+import videoIcon from '../icons/videochat.png';
+import Phone from '../icons/phone.png';
+import information from '../icons/information.png';
+import Send from '../icons/send.png';
+import Persona from '../icons/persona.jpg';
 
 const ChatBox = () => {
     const messageEndRef = useRef(null);
@@ -41,77 +45,118 @@ const ChatBox = () => {
         });
         text.current.value = '';
         scrollToBottom();
-
     }
 
     const whaleGif = (
         <Fragment>
-            <div className='form-container welcomePage'>
-                <h1>Find a friend to message</h1>
-                <WhaleLarger />
+            <div className="top-bar">
+                <h3>{sendingToUser.length !== 0 ? sendingToUser.name : `Find a friend to message`}</h3>
+                <img src={Phone} alt="not found" />
+                <img src={videoIcon} alt="not found" />
+                <img src={information} alt="not found" />
+            </div>
+            <div className="center-grid">
+                <div className="chatboxAndSend">
+                    <div className="msg_container_base">
+                        {currentChat !== null && currentChat.toString() !== 'undefined' && currentChat.length !== 0 && user !== null && currentChat.map ? currentChat.map(each => (
+                            each.name === user.name ?
+                                (<div className="row msg_container base_sent">
+                                    <div className="col-md-10 col-xs-10">
+                                        <div className="messages msg_sent">
+                                            <p>{each.message}</p>
+                                        </div>
+                                    </div>
+                                    <div ref={messageEndRef}>
+                                    </div>
+                                </div>)
+                                : (<div className="row msg_container base_receive">
+                                    <div className="col-md-10 col-xs-10">
+                                        <div className="messages msg_receive">
+                                            <p key={each._id}>{each.message}</p>
+                                        </div>
+                                    </div>
+                                    <div ref={messageEndRef}>
+                                    </div>
+
+                                </div>)
+
+                        )
+                        ) : <Fragment>
+                                <div ref={messageEndRef}>
+                                </div>
+                            </Fragment>}
+
+                    </div>
+                    <div className="input-box">
+                    </div>
+                </div>
+                <div className="profile">
+                </div>
             </div>
         </Fragment>
 
     );
     const chatBox = (
         <Fragment>
-            <div className="panel-heading top-bar">
-                <div className="col-md-8 col-xs-8">
-                    <h3 className="panel-title"><span className="glyphicon glyphicon-comment"></span>{sendingToUser.length !== 0 ? sendingToUser.name : `Find a friend to message`}</h3>
-                </div>
+            <div className="top-bar">
+                <h3>{sendingToUser.length !== 0 ? sendingToUser.name : `Find a friend to message`}</h3>
+                <img src={Phone} alt="not found" />
+                <img src={videoIcon} alt="not found" />
+                <img src={information} alt="not found" />
             </div>
-            <div className="panel-body msg_container_base">
+            <div className="center-grid">
+                <div className="chatboxAndSend">
+                    <div className="msg_container_base">
+                        {currentChat !== null && currentChat.toString() !== 'undefined' && currentChat.length !== 0 && user !== null && currentChat.map ? currentChat.map(each => (
+                            each.name === user.name ?
+                                (<div className="row msg_container base_sent">
+                                    <div className="col-md-10 col-xs-10">
+                                        <div className="messages msg_sent">
+                                            <p>{each.message}</p>
+                                        </div>
+                                    </div>
+                                    <div ref={messageEndRef}>
+                                    </div>
+                                </div>)
+                                : (<div className="row msg_container base_receive">
+                                    <div className="col-md-10 col-xs-10">
+                                        <div className="messages msg_receive">
+                                            <p key={each._id}>{each.message}</p>
+                                        </div>
+                                    </div>
+                                    <div ref={messageEndRef}>
+                                    </div>
 
-                {currentChat !== null && currentChat.toString() !== 'undefined' && currentChat.length !== 0 && user !== null && currentChat.map ? currentChat.map(each => (
-                    each.name === user.name ?
-                        (<div className="row msg_container base_sent">
-                            <div className="col-md-10 col-xs-10">
-                                <div className="messages msg_sent">
-                                    <p>{each.message}</p>
+                                </div>)
+
+                        )
+                        ) : <Fragment>
+                                <div ref={messageEndRef}>
                                 </div>
-                            </div>
-                            <div className="col-md-2 col-xs-2 avatar">
-                                <h4>{user !== null ?
-                                    <p>{each.name}</p> : <p>None</p>}</h4>
-                            </div>
+                            </Fragment>}
 
-                            <div ref={messageEndRef}>
-                            </div>
-                        </div>)
-                        : (<div className="row msg_container base_receive">
-                            <div className="col-md-2 col-xs-2 avatar">
-                                <h4>{each !== null ?
-                                    <p key={each._id}>{each.name}</p> : <p>Send a message...</p>}</h4>
-                            </div>
-                            <div className="col-md-10 col-xs-10">
-                                <div className="messages msg_receive">
-                                    <p key={each._id}>{each.message}</p>
-                                </div>
-                            </div>
-                            <div ref={messageEndRef}>
-                            </div>
-
-                        </div>)
-
-                )
-                ) : <Fragment><h1>Send a message...</h1>
-                        <div ref={messageEndRef}>
+                    </div>
+                    <div className="input-box">
+                        <div className="input-group">
+                            <input type="text" ref={text} placeholder="Type a message..." />
+                            <img src={Send} alt="not found" onClick={sendText} />
                         </div>
-                    </Fragment>}
-            </div>
+                    </div>
+                </div>
+                <div className="profile">
+                    <div className="profilepic">
+                        <img src={Persona} alt="not found" />
+                    </div>
 
-            <div className="panel-footer">
-                <div className="input-group">
-                    <input id="btn-input" type="text" ref={text} className="input-sm chat_input" placeholder="Write your message here..." />
-                    <button className="btn btn-primary btn-try btn-sm btn-sender" onClick={sendText}>Send</button>
+                    <h3>{sendingToUser.name}</h3>
+                    <h3>{sendingToUser.email}</h3>
                 </div>
             </div>
-
         </Fragment>
     );
 
     return (
-        <div>
+        <div className="chatbox">
             {sendingToUser.length !== 0 && currentChat !== null && currentChat.toString() !== 'undefined' ? chatBox : whaleGif}
         </div>
     )

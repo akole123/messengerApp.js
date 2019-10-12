@@ -1,0 +1,73 @@
+.homepage{
+    display:grid;
+    grid-template-columns: 22% 78%;
+}   
+.friendslist{
+    border-right: 1px solid #D0D1E9;
+    min-width: 420px;
+    height: 92vh;
+ }
+.friendslistnav{
+    min-height: 60px;
+    padding: 10px 16px;
+}
+.friendslistnav .chat-title{
+    padding-right: 15px;
+    display:flex;
+}
+.friendslistnav .chat-title h3{
+    width: 90%;
+    height: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all .25s;
+}
+.friendslistnav .chat-title i{
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top:10px;
+    text-align:center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .04);
+    border-radius: 10px;
+}
+.friendsfilter{
+    padding: 4px 0px 12px 12px;
+    display:flex;
+}
+.friendsfilter i{
+    position: absolute;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.friendsfilter input{
+    padding-left: 30px;
+    background-color: rgba(0, 0, 0, .04);
+    border-radius: 10px;
+}
+.eachfriendblock{   
+
+    cursor: pointer;
+    width: 404px;
+    height: 64px;
+    padding-left: 10px;
+    padding-right: 10px;
+} 
+.eachfriendblock .list{
+    display:flex;
+    position:relative;
+    border: 1px solid #D0D1E9;
+    border-radius: 10px;
+}
+.eachfriendblock .list div{
+    width: 300px;
+    padding-top:10px;
+    padding-left: 20px;
+}
+.eachfriendblock .list #eachFriendEdit{
+    padding-top: 15px;
+}

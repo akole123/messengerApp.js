@@ -1,0 +1,91 @@
+@import "../src/style/utilities";
+@import "../src/style/navigation";
+@import "../src/style/chatbox";
+@import "../src/style/friendslist";
+@import "../src/style/registration";
+@import "../src/style/friendspage";
+
+@media(max-width: 1500px){
+    .homepage{
+        display:grid;
+        grid-template-columns: 22% 78%;
+    }
+    .friendslist{
+        min-width: 100%;
+    }
+    .eachfriendblock{   
+        width: 100%;
+    }
+    .registration-grid .late-reg{
+        width: 40%;
+    }
+    .profile-grid .form-container{
+        width: 40%;
+    }
+    .friendsPage .filterAndFriends{
+        width: 40%;
+    }
+}
+@media(max-width: 1200px){
+    .eachfriendblock .fa-comment-dots{
+        display:none;   
+    }
+    .registration-grid .late-reg{
+        width: 50%;
+    }
+    .profile-grid .form-container{
+        width: 50%;
+    }
+    .friendsPage .filterAndFriends{
+        width: 50%;
+    }
+}
+@media(max-width: 870px){
+    .homepage{
+        display:block;
+    }
+    .friendslist{
+        height: 100%;
+    }
+    .profile{
+        display:none;
+    }
+    .input-box{
+        padding-left:0px;
+    }
+    .input-box .input-group{
+        border:none;
+    }
+    .msg_container_base{
+        height: 100%;
+        min-height: 100%;
+        border:none;
+    }
+    .registration-grid .late-reg{
+        width: 80%;
+    }
+    .profile-grid .form-container{
+        width: 80%;
+    }
+    .friendsPage .filterAndFriends{
+        width: 80%;
+    }
+}
+@media(max-width: 425px){
+    .registration-grid .late-reg{
+        width: 100%;
+    }
+    .profile-grid .form-container{
+        width: 100%;
+    }
+    .friendsPage .filterAndFriends{
+        width: 100%;
+    }
+    .form-inline {
+        display: block; 
+        align-items: center; 
+    }     
+    .form-inline button {
+        width:100%;
+    }
+}

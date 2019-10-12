@@ -31,21 +31,20 @@ const UserSearchItem = ({ each, authContext }) => {
 
     return (
         <div className='userCard bg-light'>
-            <ul className="list">
-                {name && (<li><i className="fas fa-address-book"></i>{name}</li>)}
-                {email && (<li><i className="fas fa-envelope-open"></i>{email}</li>)}
-            </ul>
-            <ul>
+            <div className="nameEmail">
+                {name && (<div>{name}</div>)}
+                {email && (<div>{email}</div>)}
+            </div>
+            <div className="friendsAdd">
                 {_id !== user._id ? (user.friends.includes(_id) ?
-
                     (<Fragment>
                         <button className="btn btn-primary btn-sm">Friend</button>
                     </Fragment>)
 
-                    : <button className="btn btn-dark btn-sm"
-                        onClick={(onClick)}> Add To Friend</button>)
+                    : <div><button className="btn btn-primary btn-sm"
+                        onClick={(onClick)}><i class="fas fa-user-plus"></i> Add To Friend</button></div>)
                     : <button className="btn btn-green btn-sm">Me</button>}
-            </ul>
+            </div>
         </div>
     )
 }

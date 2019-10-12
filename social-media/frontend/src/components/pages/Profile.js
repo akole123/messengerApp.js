@@ -30,19 +30,19 @@ const Profile = () => {
     }
 
     return (
-        <div className="form-container">
-            <h1>Update Profile</h1>
-            <form onSubmit={onSubmit}>
-                <div className="form-group">
-                    <label htmlFor="name">Name</label>
-                    <input type="text" name="name" value={name} onChange={onChange} required />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input type="email" name="email" value={email} onChange={onChange} required />
-                </div>
-                <input type="submit" value="Update Profile" className="btn btn-primary btn-block" />
-            </form>
+        <div className="profile-grid">
+            <div className="form-container">
+                <h1>Update Profile</h1>
+                <form onSubmit={onSubmit}>
+                    <div className="form-group">
+                        <input type="text" name="name" placeholder="First and Last name" value={name} onChange={onChange} required />
+                    </div>
+                    <div className="form-group">
+                        <input type="email" name="email" placeholder="Email Address" value={email} onChange={onChange} required />
+                    </div>
+                    <input type="submit" value="Update Profile" className="signup-button" />
+                </form>
+            </div>
         </div>
     )
 }

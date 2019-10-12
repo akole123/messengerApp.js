@@ -1,0 +1,98 @@
+.homepage {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 22% 78%;
+      grid-template-columns: 22% 78%;
+}
+
+.friendslist {
+  border-right: 1px solid #D0D1E9;
+  min-width: 420px;
+  height: 92vh;
+}
+
+.friendslistnav {
+  min-height: 60px;
+  padding: 10px 16px;
+}
+
+.friendslistnav .chat-title {
+  padding-right: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.friendslistnav .chat-title h3 {
+  width: 90%;
+  height: 100%;
+  font-size: 24px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+}
+
+.friendslistnav .chat-title i {
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 10px;
+}
+
+.friendsfilter {
+  padding: 4px 0px 12px 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.friendsfilter i {
+  position: absolute;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.friendsfilter input {
+  padding-left: 30px;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 10px;
+}
+
+.eachfriendblock {
+  cursor: pointer;
+  width: 404px;
+  height: 64px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.eachfriendblock .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  border: 1px solid #D0D1E9;
+  border-radius: 10px;
+}
+
+.eachfriendblock .list div {
+  width: 300px;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.eachfriendblock .list #eachFriendEdit {
+  padding-top: 15px;
+}
+/*# sourceMappingURL=friendslist.css.map */

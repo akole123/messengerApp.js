@@ -15,13 +15,11 @@ const Home = () => {
     }, [loadUser, isAuthenticated]);
 
     const homePage = (
-        <div className='grid-2-3'>
-            <div>
+        <div className='homepage'>
+            <div className="friendslist">
                 <FriendList />
             </div>
-            <div>
-                <ChatBox />
-            </div>
+            <ChatBox />
         </div>
     )
 
@@ -30,9 +28,9 @@ const Home = () => {
     )
 
     return (
-        <ul>
-            {isAuthenticated ? homePage : registerPage}
-        </ul>
+        <div>
+            {isAuthenticated ? homePage : <div className="registration-grid"> {registerPage} </div>}
+        </div>
 
     )
 }
